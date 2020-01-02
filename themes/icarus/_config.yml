@@ -34,22 +34,22 @@ navbar:
         About: /about
     # Navigation bar links to be shown on the right
     links:
-        Download on GitHub:
-            icon: fab fa-github
-            url: 'https://github.com/ppoffice/hexo-theme-icarus'
+       # Download on github:
+       #     icon: fab fa-github
+       #     url: 'https://github.com/ppoffice/hexo-theme-icarus'
 # Footer section link settings
 footer:
     # Links to be shown on the right of the footer section
     links:
-        Creative Commons:
-            icon: fab fa-creative-commons
-            url: 'https://creativecommons.org/'
-        Attribution 4.0 International:
-            icon: fab fa-creative-commons-by
-            url: 'https://creativecommons.org/licenses/by/4.0/'
-        Download on GitHub:
+        # Creative Commons:
+        #    icon: fab fa-creative-commons
+        #    url: 'https://creativecommons.org/'
+        # Attribution 4.0 International:
+        #    icon: fab fa-creative-commons-by
+        #    url: 'https://creativecommons.org/licenses/by/4.0/'
+          Astrobear:
             icon: fab fa-github
-            url: 'https://github.com/ppoffice/hexo-theme-icarus'
+            url: 'https://github.com/Astrobr'
 # Article display settings
 article:
     # Code highlight settings
@@ -90,16 +90,16 @@ donate:
         qrcode: '/images/wechatpay.JPG'
     -
         # Donation entry name
-        type: paypal
+        # type: paypal
         # Paypal business ID or email address
-        business: ''
+        #  business: ''
         # Currency code
-        currency_code: USD
+        # currency_code: USD
     -
         # Donation entry name
-        type: patreon
+        # type: patreon
         # URL to the Patreon page
-        url: ''
+        #  url: ''
 # Share plugin settings
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Share
 share:
@@ -127,7 +127,7 @@ widgets:
         # Where should the widget be placed, left or right
         position: left
         # Author name to be shown in the profile widget
-        author: Astrobaer
+        author: Astrobear
         # Title of the author to be shown in the profile widget
         author_title: Student struggling
         # Author's current location to be shown in the profile widget
@@ -162,18 +162,23 @@ widgets:
         type: toc
         # Where should the widget be placed, left or right
         position: left
-    -
+   # -
         # Widget name
-        type: links
+        #  type: links
         # Where should the widget be placed, left or right
-        position: left
+        #  position: left
         # Links to be shown in the links widget
-        links:
-            Hexo: 'https://hexo.io'
-            PPOffice: 'https://github.com/ppoffice'
+        #  links:
+        #    Hexo: 'https://hexo.io'
+        #    PPOffice: 'https://github.com/ppoffice'
     -
         # Widget name
         type: category
+        # Where should the widget be placed, left or right
+        position: left
+    -
+        # Widget name
+        type: tag
         # Where should the widget be placed, left or right
         position: left
     -
@@ -189,11 +194,6 @@ widgets:
     -
         # Widget name
         type: archive
-        # Where should the widget be placed, left or right
-        position: right
-    -
-        # Widget name
-        type: tag
         # Where should the widget be placed, left or right
         position: right
 # Other plugin settings

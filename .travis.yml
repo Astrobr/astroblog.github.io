@@ -20,7 +20,7 @@ script:
 - hexo clean
 - hexo generate
 after_success:
-- scp -o stricthostkeychecking=no -r ./public/ root@119.3.248.174:/usr/astroblog/public/
+- scp -o stricthostkeychecking=no -r ./public/* root@119.3.248.174:/usr/astroblog/public/
 - cd ./public
 - git init
 - git add --all .

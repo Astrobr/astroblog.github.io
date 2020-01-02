@@ -1,7 +1,7 @@
 # Version of the Icarus theme that is currently used
 version: 2.6.0
 # Path or URL to the website's icon
-favicon: /images/favicon.svg
+favicon: /images/favicon.png
 # Additional HTML meta tags in an array.
 meta: 
 # canonical_url of your site
@@ -9,7 +9,7 @@ canonical_url:
 # Path or URL to RSS atom.xml
 rss: 
 # Path or URL to the website's logo to be shown on the left of the navigation bar or footer
-logo: /images/logo.svg
+logo: /images/logo.png
 # Open Graph metadata
 # https://hexo.io/docs/helpers.html#open-graph
 open_graph:
@@ -82,12 +82,12 @@ donate:
         # Donation entry name
         type: alipay
         # Qrcode image URL
-        qrcode: ''
+        qrcode: '/images/alipay.JPG'
     -
         # Donation entry name
         type: wechat
         # Qrcode image URL
-        qrcode: ''
+        qrcode: '/images/wechatpay.JPG'
     -
         # Donation entry name
         type: paypal
@@ -127,24 +127,24 @@ widgets:
         # Where should the widget be placed, left or right
         position: left
         # Author name to be shown in the profile widget
-        author: Your name
+        author: Astrobaer
         # Title of the author to be shown in the profile widget
-        author_title: Your title
+        author_title: Student struggling
         # Author's current location to be shown in the profile widget
-        location: Your location
+        location: Beijing, China
         # Path or URL to the avatar to be shown in the profile widget
-        avatar: 
+        avatar: /images/avatar.jpg
         # Email address for the Gravatar to be shown in the profile widget
         gravatar: 
         # Whether to show avatar image rounded or square
-        avatar_rounded: false
+        avatar_rounded: true
         # Path or URL for the follow button
-        follow_link: 'https://github.com/ppoffice'
+        follow_link: 'https://github.com/Astrobr'
         # Links to be shown on the bottom of the profile widget
         social_links:
             Github:
                 icon: fab fa-github
-                url: 'https://github.com/ppoffice'
+                url: 'https://github.com/Astrobr'
             Facebook:
                 icon: fab fa-facebook
                 url: 'https://facebook.com'

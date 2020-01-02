@@ -8,7 +8,7 @@ subtitle: ''
 description: ''
 keywords:
 author: Astrobear
-language: zh-CN
+language: en
 timezone: 'Asia/Shanghai'
 
 # URL
@@ -64,6 +64,11 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
+	Major: major
+	Computer Technology: ct
+	Astronomy: astro
+	Aerospace: aero
+	Other: other
 tag_map:
 
 # Metadata elements

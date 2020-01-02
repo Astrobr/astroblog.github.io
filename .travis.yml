@@ -17,8 +17,6 @@ install:
 script:
 - hexo clean
 - hexo generate
-after_success:
-- rsync -rv --delete -e 'ssh -o stricthostkeychecking=no -p 1022' public/ root@www.astrobear.top:/usr/astroblog
 deploy:
   provider: pages
   skip_cleanup: true
@@ -30,3 +28,5 @@ deploy:
   target-branch: master
   on:
     branch: hexo
+after_success:
+- rsync -rv --delete -e 'ssh -o stricthostkeychecking=no -p 1022' public/ root@www.astrobear.top:/usr/astroblog

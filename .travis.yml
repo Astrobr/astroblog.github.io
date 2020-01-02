@@ -21,6 +21,7 @@ script:
 - hexo generate
 after_success:
 - rsync -rv --delete -e 'ssh -o stricthostkeychecking=no -p 1022' public/ root@www.astrobear.top:/usr/astroblog
+- scp -o stricthostkeychecking=no -r ./* root@119.3.248.174:/usr/astroblog/
 - cd ./public
 - git init
 - git add --all .

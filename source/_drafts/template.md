@@ -14,7 +14,7 @@ tags:
 #thumbnail: /thumbnail/xxx.xxx
 
 #If you need to customize your excerpt, delete the well number below and input something. You can also input <!-- more --> in your article to divide the excerpt and other contents.
-excerpt: test
+#excerpt: ...
 
 #You can begin to input your article below now.
 

@@ -27,12 +27,12 @@ widgets: []
 
   <div class="justified-gallery">
 
-![Elephant](https://astrobear.top/resources/gallery/g1.JPG)
+![Elephant](http://resource.astrobear.top/astroblog/gallery/g1.JPG)
 
-![Elephant](https://astrobear.top/resources/gallery/g1.JPG)
+![Elephant](http://resource.astrobear.top/astroblog/gallery/g1.JPG)
 
-![Elephant](https://astrobear.top/resources/gallery/g1.JPG)
+![Elephant](http://resource.astrobear.top/astroblog/gallery/g1.JPG)
 
-![Elephant](https://astrobear.top/resources/gallery/g1.JPG)
+![Elephant](http://resource.astrobear.top/astroblog/gallery/g1.JPG)
 
 </div>

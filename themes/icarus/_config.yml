@@ -31,6 +31,7 @@ navbar:
         Archives: /archives
         Categories: /categories
         Tags: /tags
+        Gallery: /
         About: /about
     # Navigation bar links to be shown on the right
     links:
@@ -47,9 +48,16 @@ footer:
         # Attribution 4.0 International:
         #    icon: fab fa-creative-commons-by
         #    url: 'https://creativecommons.org/licenses/by/4.0/'
+          CC BY-NC-SA 4.0:
+             icon:
+              - fab fa-creative-commons
+              - fab fa-creative-commons-by
+              - fab fa-creative-commons-nc
+              - fab fa-creative-commons-sa
+             url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/'
           Astrobear:
-            icon: fab fa-github
-            url: 'https://github.com/Astrobr'
+             icon: fab fa-github
+             url: 'https://github.com/Astrobr'
 # Article display settings
 article:
     # Code highlight settings
@@ -110,7 +118,7 @@ donate:
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Share
 share:
     # Share plugin name
-    type: 
+    type: sharejs 
 # Sidebar settings.
 # Please be noted that a sidebar is only visible when it has at least one widget
 sidebar:
@@ -153,16 +161,19 @@ widgets:
                 url: 'https://github.com/Astrobr'
             Facebook:
                 icon: fab fa-facebook
-                url: 'https://facebook.com'
-            Twitter:
-                icon: fab fa-twitter
-                url: 'https://twitter.com'
-            Dribbble:
-                icon: fab fa-dribbble
-                url: 'https://dribbble.com'
-            RSS:
-                icon: fas fa-rss
-                url: /
+                url: 'https://www.facebook.com/astrobearforwork'
+            Instagram:
+                icon: fab fa-instagram
+                url: 'https://www.instagram.com/astrobarchen/'
+           # Twitter:
+           #     icon: fab fa-twitter
+           #     url: 'https://twitter.com'
+           # Dribbble:
+           #     icon: fab fa-dribbble
+           #     url: 'https://dribbble.com'
+           # RSS:
+           #     icon: fas fa-rss
+           #     url: /
     -
         # Widget name
         type: toc
@@ -236,7 +247,7 @@ plugins:
     progressbar: true
     # BuSuanZi site/page view counter
     # https://busuanzi.ibruce.info
-    busuanzi: false
+    busuanzi: true
 # CDN provider settings
 # https://ppoffice.github.io/hexo-theme-icarus/Configuration/Theme/speed-up-your-site-with-custom-cdn/
 providers:

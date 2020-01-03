@@ -37,42 +37,36 @@
                 </div>
             </div>
         </nav>
-        <nav class="level is-mobile">
+        <nav class="level menu-list is-mobile" style="margin-bottom:1rem">
             <div class="level-item has-text-centered is-marginless">
-                <div>
+                <a href="<%- url_for('/archives/') %>">
                     <p class="heading">
                         <%= _p('common.post', post_count()) %>
                     </p>
-                    <a href="<%= url_for('/archives') %>">
-                        <p class="title has-text-weight-normal">
+                    <p class="title has-text-weight-normal">
                             <%= post_count() %>
-                        </p>
-                    </a>
-                </div>
+                    </p>
+                </a>
             </div>
             <div class="level-item has-text-centered is-marginless">
-                <div>
+                <a href="<%- url_for('/categories/') %>">
                     <p class="heading">
                         <%= _p('common.category', category_count()) %>
                     </p>
-                    <a href="<%= url_for('/categories') %>">
-                        <p class="title has-text-weight-normal">
+                    <p class="title has-text-weight-normal">
                             <%= category_count() %>
-                        </p>
-                    </a>
-                </div>
+                    </p>
+                </a>
             </div>
             <div class="level-item has-text-centered is-marginless">
-                <div>
+                <a href="<%- url_for('/tags/') %>">
                     <p class="heading">
                         <%= _p('common.tag', tag_count()) %>
                     </p>
-                    <a href="<%= url_for('/tags') %>">
-                        <p class="title has-text-weight-normal">
+                    <p class="title has-text-weight-normal">
                             <%= tag_count() %>
-                        </p>
-                    </a>
-                </div>
+                    </p>
+                </a>
             </div>
         </nav>
         <% if (widget.follow_link) { %>

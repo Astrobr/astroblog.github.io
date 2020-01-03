@@ -23,7 +23,13 @@ body, button, input, select, textarea
     .is-2-column .container
         max-width: screen-desktop - 2 * gap
         width: screen-desktop - 2 * gap
+    .is-3-column .container
+        max-width: screen-widescreen - gap
+        width: screen-widescreen - gap
 @media screen and (min-width: screen-fullhd)
+    .is-3-column .container
+        max-width: screen-fullhd - 2 * gap
+        width: screen-fullhd - 2 * gap
     .is-2-column .container
         max-width: screen-widescreen - 2 * gap
         width: screen-widescreen - 2 * gap
@@ -118,6 +124,15 @@ img.thumbnail
         .button
             background: transparent
 
+.post-copyright
+    font-size: 1rem
+    letter-spacing: 0.02rem
+    word-break: break-all
+    margin: 2.5rem 0 0
+    padding: 1rem 1rem
+    border-left: 3px solid #FF1700
+    background-color: #F9F9F9
+
 .widget
     .media
         border: none
@@ -125,6 +140,8 @@ img.thumbnail
         margin-top: 0
     .menu-list li ul
         margin-right: 0
+    .menu-list a
+        transition: background-color 0.3s ease-in-out
     .menu-list a.level
         display: flex
     .has-text-centered figure.image
@@ -476,3 +493,11 @@ figure.highlight
             border: none
     .file
         all: initial
+
+.article {counter-reset:section}
+.article h2{counter-reset:sub-section}
+.article h3{counter-reset:composite}
+.article h4{counter-reset:detail}
+.article h2:before{content:counter(section) " ";counter-increment:section}
+.article h3:before{content:counter(section) "." counter(sub-section) " ";counter-increment:sub-section}
+.article h4:before{content:counter(section) "." counter(sub-section) "." counter(composite) " ";counter-increment:composite}

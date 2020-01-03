@@ -19,6 +19,8 @@
                 <%- _p('plugin.visitor', '<span id="busuanzi_value_site_uv">0</span>') %>
                 </span>
                 <% } %>
+                <br>
+                <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener">京ICP备19039261号-1</a>
                 </p>
             </div>
             <div class="level-end">
@@ -31,7 +33,7 @@
                         <% if (typeof(link) === 'string') { %>
                         <%= name %>
                         <% } else { %>
-                        <i class="<%= link.icon %>"></i>
+                            <% for (let icon of (Array.isArray(link.icon) ? link.icon : [link.icon])) { %><i class="<%= icon %>"></i>&nbsp;<% } %>
                         <% } %>
                     </a>
                 </p>

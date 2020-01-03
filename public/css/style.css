@@ -20,8 +20,16 @@ textarea {
     max-width: 960px;
     width: 960px;
   }
+  .is-3-column .container {
+    max-width: 1216px;
+    width: 1216px;
+  }
 }
 @media screen and (min-width: 1472px) {
+  .is-3-column .container {
+    max-width: 1344px;
+    width: 1344px;
+  }
   .is-2-column .container {
     max-width: 1152px;
     width: 1152px;
@@ -130,6 +138,15 @@ img.thumbnail {
 .footer .field .button {
   background: transparent;
 }
+.post-copyright {
+  font-size: 1rem;
+  letter-spacing: 0.02rem;
+  word-break: break-all;
+  margin: 2.5rem 0 0;
+  padding: 1rem 1rem;
+  border-left: 3px solid #ff1700;
+  background-color: #f9f9f9;
+}
 .widget .media {
   border: none;
 }
@@ -138,6 +155,9 @@ img.thumbnail {
 }
 .widget .menu-list li ul {
   margin-right: 0;
+}
+.widget .menu-list a {
+  transition: background-color 0.3s ease-in-out;
 }
 .widget .menu-list a.level {
   display: flex;
@@ -536,4 +556,28 @@ figure.highlight .section {
 }
 .gist .file {
   all: initial;
+}
+.article {
+  counter-reset: section;
+}
+.article h2 {
+  counter-reset: sub-section;
+}
+.article h3 {
+  counter-reset: composite;
+}
+.article h4 {
+  counter-reset: detail;
+}
+.article h2:before {
+  content: counter(section) " ";
+  counter-increment: section;
+}
+.article h3:before {
+  content: counter(section) "." counter(sub-section) " ";
+  counter-increment: sub-section;
+}
+.article h4:before {
+  content: counter(section) "." counter(sub-section) "." counter(composite) " ";
+  counter-increment: composite;
 }

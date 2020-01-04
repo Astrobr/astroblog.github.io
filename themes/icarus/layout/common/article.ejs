@@ -104,43 +104,43 @@
                     </ul>
                 <% } %>
         <% if (!index && post.tags && post.tags.length) { %>
-        <hr style="height:1px;margin:1rem 0"/>
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
-                    <%- list_tags(post.tags, {
-                        class: 'has-link-grey ',
-                        show_count: false,
-                        style: 'link',
-                        separator: ',&nbsp;'
-                    }) %>
+            <hr style="height:1px;margin:1rem 0"/>
+            <div class="level is-size-7 is-uppercase is-overflow-x-auto">
+                <div class="level-start">
+                    <div class="level-item is-flex-start">
+                        <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                        <%- list_tags(post.tags, {
+                            class: 'has-link-grey ',
+                            show_count: false,
+                            style: 'link',
+                            separator: ',&nbsp;'
+                        }) %>
+                    </div>
                 </div>
             </div>
-        </div>
         <% } %>
         <% if (index && post.excerpt) { %>
             <hr style="height:1px;margin:1rem 0"/>
-                <div class="level is-mobile is-flex">
-                    <div class="level-start">
-                        <% if (post.tags && post.tags.length) { %>
-                        <div class="level-item is-size-7 is-uppercase">
-                            <i class="fas fa-tags has-text-grey"></i>&nbsp;
-                            <%- list_tags(post.tags, {
-                                class: 'has-link-grey ',
-                                show_count: false,
-                                style: 'link',
-                                separator: ',&nbsp;'
-                            }) %>
-                        </div>
-                        <% } %>
+            <div class="level is-mobile is-flex">
+                <div class="level-start is-overflow-x-auto">
+                    <% if (post.tags && post.tags.length) { %>
+                    <div class="level-item is-size-7 is-uppercase is-flex-start">
+                        <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                        <%- list_tags(post.tags, {
+                            class: 'has-link-grey ',
+                            show_count: false,
+                            style: 'link',
+                            separator: ',&nbsp;'
+                        }) %>
                     </div>
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="<%- url_for(post.path) %>#more"><%= __('article.more') %></a>
+                    <% } %>
+                </div>
+                <div class="level-start">
+                    <div class="level-item">
+                        <a class="button is-size-7 is-light" href="<%- url_for(post.path) %>#more"><%= __('article.more') %></a>
+                    </div>
                 </div>
             </div>
-        </div>
         <% } %>
         <% if (!index && has_config('share.type')) { %>
         <%- _partial('share/' + get_config('share.type')) %>

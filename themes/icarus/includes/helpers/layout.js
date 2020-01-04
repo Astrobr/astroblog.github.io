@@ -25,11 +25,14 @@ module.exports = function (hexo) {
         if (this.page.layout !== 'post') {
                     return widgets.filter(widget => widget.hasOwnProperty('position') && widget.position === position);
                 }
-                if (position === 'left') {
+        if (this.page.title === '欢迎来到Astroblog！') {
+                    return widgets.filter(widget => widget.hasOwnProperty('position') && widget.position === position);
+            }
+        if (position === 'left') {
                     return widgets.filter(widget => widget.hasOwnProperty('position') && (widget.type === 'toc' || widget.type === 'profile'));
-                } else {
-                    return []
-                }
+            } else {
+                return []
+            }
     });
 
     hexo.extend.helper.register('has_column', function (position) {

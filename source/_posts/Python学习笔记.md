@@ -11,10 +11,10 @@ tags:
 	#...
 
 #If you need a thumbnail photo for your post, delete the well number below and finish the directory.
-thumbnail: https://www.crypteron.com/wp-content/uploads/python-logo-master-v3-TMcopy_zpsc29570ab.png
+thumbnail: https://netmaxtech.com/wp-content/uploads/2017/05/Python-Logo-PNG-Image.png
 
 #If you need to customize your excerpt, delete the well number below and input something. You can also input <!-- more --> in your article to divide the excerpt and other contents.
-#excerpt: 
+excerpt: 记录本人在学习Python时遇到的坑以及这门语言的特性。
 
 #You can begin to input your article below now.
 

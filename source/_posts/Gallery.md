@@ -2,7 +2,7 @@
 title: Gallery
 date: 2020-1-3 23:25:00
 categories: 
-	- [Gellary]
+	- [Others]
 	#- [cate2]
 	#...
 tags: 

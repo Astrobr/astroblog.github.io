@@ -43,7 +43,7 @@ excerpt: 搭建自己的服务器并不难，只是过程较为复杂。
 
 在控制台点击“弹性云服务器ECS”，在这里你可看到你的服务器的公网IP，请记下这个IP地址。然后点击在列表中点击你的服务器的名称。
 
-![选择服务器](https://astrobear.top/resource/astroblog/content/sg_settings.png)
+![选择服务器](https://astrobear.top/resource/astroblog/content/security_groups.png)
 
 进入云服务器管理页面后，点击“安全组”。再点击“Sys-default”可以看到默认安全组。然后下面给出的图片是我目前的安全组设置，仅供参考。选择“入/出方向方向规则”，再点击“添加规则“即可手动添加规则。一般来说，配置的都是入方向的安全组，并且源地址（访问服务器的设备的IP地址）都为“0.0.0.0/0”（所有IP地址）。
 

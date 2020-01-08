@@ -106,7 +106,7 @@ cd /usr/local/nginx/sbin #进入Nginx安装目录
 
 
 
-[^1]: [安全组简介__华为云](https://support.huaweicloud.com/usermanual-vpc/zh-cn_topic_0073379079.html)
+[1]: https://support.huaweicloud.com/usermanual-vpc/zh-cn_topic_0073379079.html	"安全组简介_华为云"
 
 
 

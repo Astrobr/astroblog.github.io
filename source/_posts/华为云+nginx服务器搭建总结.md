@@ -104,9 +104,7 @@ cd /usr/local/nginx/sbin #进入Nginx安装目录
 
 > 接下来将更新的内容：购买域名及绑定...
 
-
-
-[1]: https://support.huaweicloud.com/usermanual-vpc/zh-cn_topic_0073379079.html	"安全组简介_华为云"
+[^1]:https://support.huaweicloud.com/usermanual-vpc/zh-cn_topic_0073379079.html
 
 
 

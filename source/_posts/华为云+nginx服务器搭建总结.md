@@ -102,13 +102,84 @@ cd /usr/local/nginx/sbin #进入Nginx安装目录
 
 ![nginx安装成功](https://astrobear.top/resource/astroblog/content/nginx_install.png)
 
-> 接下来将更新的内容：购买域名及绑定...
+### 创建属于你自己的域名
+
+在拥有了自己的服务器以后，就可以做很多事情了。但是现在你只能通过IP地址访问自己的服务器，看起来总是有点别扭。另外，如果你想要网站有一定的影响力的话，仅有IP地址会让人几乎找不到你的网站，而且也不符合国家法律规定。所以还是建议大家弄一个自己的域名。
+
+现在市面上的云服务器提供商也都提供域名注册的服务，直接在你的服务提供商的平台上面注册即可。下面我继续用华为云的平台演示。
+
+首先在华为云网站页面的导航栏的搜索框内搜索“域名”，打开第一个链接“域名注册服务”。也可以直接点击这里：[域名注册服务_华为云](https://www.huaweicloud.com/product/domain.html)。
+
+然后你可以在网页中选择你的域名，常见的如`.com`，`.cn`，`.net`等。这些域名会相对比较贵。作为学生党，我选择一个最便宜的域名`.top`，只需要9元/年。
+
+点击你想要的域名后，会跳转到一个新的页面。接下来再次选择你要的域名，并且在“查域名”的搜索框内输入你想要的域名，看看是否已经被占用，如果被占用了就换一个。若显示“域名可注册”，就点击“立即购买”。
+
+![域名购买](https://astrobear.top/resource/astroblog/content/buy_domain.png)
+
+购买完成后，你就拥有了自己域名了！
+
+### 备案
+
+> 备案是中国大陆的一项法规，使用大陆节点服务器提供互联网信息服务的用户，需要在服务器提供商处提交备案申请。
+>
+> 根据工信部《互联网信息服务管理办法》(国务院292号令)和工信部令第33号《非经营性互联网信息服务备案管理办法》规定，国家对经营性互联网信息服务实行许可制度，对非经营性互联网信息服务实行备案制度。未取得许可或者未履行备案手续的，不得从事互联网信息服务，否则属违法行为。通俗来讲，要开办网站必须先办理网站备案，备案成功并获取通信管理局下发的ICP备案号后才能开通访问。[^2]
+
+这一步不多说了，具体步骤比较繁琐，花费的时间也比较长，需要一两周。网站上有很清晰的[操作方法](https://support.huaweicloud.com/pi-icp/zh-cn_topic_0115820080.html)，请自行查阅，根据步骤操作即可。需要注意一点的是，在审核过程中可能会接到服务提供商打来的电话，不要漏接。
+
+需要注意的是，上面的备案操作是在工信部备案的。完成了在工信部的备案以后还需要公安备案。具体[操作方法](http://www.beian.gov.cn/portal/downloadFile?token=596b0ddf-6c81-40bf-babd-65147ee8120c&id=29&token=596b0ddf-6c81-40bf-babd-65147ee8120c)也请自行查阅。
+
+### 域名解析
+
+在完成一系列繁琐的备案流程以后，你的网站还不可以通过域名访问。只有把你的域名跟服务器的IP地址绑定在一起之后，并且在服务器上修改了配置文件之后才可以。
+
+首先打开管理控制台，在控制台中选择“域名注册”。然后在下面的页面中点击“解析”。
+
+![域名注册](https://astrobear.top/resource/astroblog/content/domain.png)
+
+点击你的域名，显示如下页面。这里显示的是你域名的记录集，前两个记录集应该是预置设置，不可暂停服务。你可以在这基础上添加自己的记录集。
+
+![记录集](https://astrobear.top/resource/astroblog/content/record.png)
+
+点击页面右上角红色按钮以添加记录集。添加记录集的配置如下图所示。下图中给出的例子是添加的“A”型记录集，也即通过`example.com`访问网站。若需要通过`www.example.com`访问网站，则需要为`example.com`的子域名添加“A”型记录集。具体配置参见：[配置网站解析_华为云](https://support.huaweicloud.com/qs-dns/dns_qs_0002.html#section1)。点击“确定”，完成添加。你可以通过`ping 你的域名`来测试你添加的记录集是否生效了。
+
+![添加记录集](https://support.huaweicloud.com/qs-dns/zh-cn_image_0200891923.png)
+
+### 配置nginx
+
+打开你电脑上的终端，输入命令：`ssh 你的IP地址`，输入你的服务器的密码。
+
+进入你的nginx的安装目录：`cd /usr/local/nginx/`。
+
+使用vim打开nginx的配置文件：`vim ./conf/nginx.conf`。
+
+按`I`开始输入。
+
+在文件底部输入以下内容：
+
+```nginx
+server
+    {
+	    listen   80;                            #监听端口设为 80。
+	    server_name  example.com;         #绑定您的域名。
+	    index index.htm index.html;   #指定默认文件。
+	    root html;           #指定网站根目录。
+    }
+```
+
+然后按`esc`退出编辑，再按`Shift+zz`保存。
+
+输入：`cd ./sbin`，切换文件夹。
+
+执行命令：`nginx -s relod`，重启nginx服务。
+
+这时候再尝试用浏览器访问你的域名，应该会显示之前出现过的“Welcome to nginx ”的页面了！
+
+
+
+> 接下来将更新：给网站配置ssl证书。这也是本文的最后一次更新。
+
+
 
 [^1]:https://support.huaweicloud.com/usermanual-vpc/zh-cn_topic_0073379079.html
 
-
-
-
-
-
-
+[^2]: https://support.huaweicloud.com/icprb-icp/zh-cn_topic_0115815923.html

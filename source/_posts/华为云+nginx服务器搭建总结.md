@@ -136,7 +136,7 @@ cd /usr/local/nginx/sbin #进入Nginx安装目录
 
 ![域名注册](https://astrobear.top/resource/astroblog/content/domain.png)
 
-点击你的域名，显示如下页面。这里显示的是你域名的记录集，前两个记录集应该是预置设置，不可暂停服务。你可以在这基础上添加自己的记录集。
+点击你的域名，显示如下页面。这里显示的是你域名的记录集，前两个记录集应该是预置设置，不可暂停服务。<span id="1">你可以在这基础上添加自己的记录集。</span>
 
 ![记录集](https://astrobear.top/resource/astroblog/content/record.png)
 
@@ -146,7 +146,7 @@ cd /usr/local/nginx/sbin #进入Nginx安装目录
 
 ### 配置nginx
 
-打开你电脑上的终端，输入命令：`ssh 你的IP地址`，输入你的服务器的密码。
+<span id="2">打开</span>你电脑上的终端，输入命令：`ssh 你的IP地址`，输入你的服务器的密码。
 
 进入你的nginx的安装目录：`cd /usr/local/nginx/`。
 
@@ -154,16 +154,15 @@ cd /usr/local/nginx/sbin #进入Nginx安装目录
 
 按`I`开始输入。
 
-在文件底部输入以下内容：
+在最后一个大括号前插入以下内容：
 
 ```nginx
-server
-    {
-	    listen   80;                            #监听端口设为 80。
-	    server_name  example.com;         #绑定您的域名。
-	    index index.htm index.html;   #指定默认文件。
-	    root html;           #指定网站根目录。
-    }
+server {
+	    listen   80; #监听端口设为 80
+	    server_name  example.com; #绑定您的域名
+	    index index.htm index.html; #指定默认文件
+	    root html; #指定网站根目录
+}
 ```
 
 然后按`esc`退出编辑，再按`Shift+zz`保存。
@@ -174,12 +173,111 @@ server
 
 这时候再尝试用浏览器访问你的域名，应该会显示之前出现过的“Welcome to nginx ”的页面了！
 
+### 申请SSL证书
 
+SSL证书可以在数据传输的过程中对其进行加密和隐藏，可以极大地提高数据传输的安全性。拥有SSL证书的网站的请求头都是`https`，并且在链接旁边会出现一把小锁。但是，SSL证书并不是所有网站都必须的，这视你的需要而定。比如，微信小程序的服务器就必须要有域名和SSL证书。另外，出于信息传输的安全性方面的考虑，有SSL证书还是显得更为妥当和专业一点。
 
-> 接下来将更新：给网站配置ssl证书。这也是本文的最后一次更新。
+现在市面上各大云服务器提供商也都提供配套的SSL证书申请服务，一般都是提供企业级的证书，价格比较昂贵。但是同时网络上也有一些免费的SSL证书服务可以选择。下面还是以华为云的平台为例，简单说明一下如何申请SSL证书。
 
+首先在华为云页面的导航栏的搜索框内搜索“免费证书“，然后点击[亚洲诚信域名型DV单域名SSL证书--免费证书](https://marketplace.huaweicloud.com/product/00301-315148-0--0)，可以看到证书的价格是0.00元。点击“立即购买”。
 
+![购买SSL证书](https://astrobear.top/resource/astroblog/content/buy_ssl.png)
+
+完成购买后请不要立即关闭页面，页面中的订单号在之后还需要用到。尔后，系统会发送”HuaweiCloud账户申请”邮件至用户邮箱，即你在华为云的注册邮箱。
+
+![HuaweiCloud账户申请](https://astrobear.top/resource/astroblog/content/request_account.png)
+
+点击邮件中的登录地址进入系统，并使用邮件提供的账号和初始密码进行登录。登入系统后请修改你的初始密码，然后请根据华为云中给你提供的订单号在该系统中查询你的订单。查询到你的订单以后，需要你补充一些信息，请如实填写。系统会要你填写公司信息，如果只是个人网站，那么公司名称直接填写你的名字即可，公司地址就填写你的住址。
+
+填写完成后会进入审核阶段，系统会给你发送一封邮件。
+
+![证书审核](https://astrobear.top/resource/astroblog/content/check.png)
+
+根据邮件的提示，需要在记录集中添加新的内容。请根据[前文](#1)所述方法，将邮件中的内容添加至新的记录集。填写方法如下图所示。
+
+![填写记录集](https://astrobear.top/resource/astroblog/content/modify_record.png)
+
+填写完成后，可以在本地电脑的终端里输入`nslookup -querytype=txt 你的域名`来测试记录集是否生效。
+
+![测试记录集](https://astrobear.top/resource/astroblog/content/test_record.png)
+
+一般来说，记录集生效后10分钟以内证书就会颁发了。
+
+![证书颁发](https://astrobear.top/resource/astroblog/content/issue.png)
+
+### SSL证书部署
+
+接下来我们要把SSL证书部署到我们的服务器上。
+
+在收到的“证书颁发”的邮件的底部有一条链接，点击这条链接，进入证书管理系统。登录系统，在左侧导航栏中点击“SSL证书”，再点击“预览”，再在右侧的“信息预览”中点击“下载最新证书“。
+
+![下载证书](https://astrobear.top/resource/astroblog/content/download_cert.png)
+
+在弹出的对话框内，选择证书格式为“PEM(适用于Nginx,SLB)”，输入你的订单密码。证书密码可以留空。
+
+![下载证书](https://astrobear.top/resource/astroblog/content/download_cert1.png)
+
+下载完成后，解压下载的压缩包，需要输入你的订单密码（如果你没有设置证书密码）。解压以后可以得到下图两个文件。
+
+![解压缩](https://astrobear.top/resource/astroblog/content/unzip_cert.png)
+
+接下来，打开你的终端，按顺序输入下列命令：
+
+```shell
+ssh 你的公网IP #ssh登录，输入你的密码
+cd /usr/local/nginx #切换到nginx的安装目录
+mkdir ./cert #创建一个新文件夹cert用于存放你的证书
+exit #断开与服务器的连接
+scp 文件的路径/你的域名.key 你的服务器用户名@你的服务器IP地址:./cert #将.key文件上传到你的服务器的指定目录下
+scp 文件的路径/你的域名.crt 你的服务器用户名@你的服务器IP地址:./cert #将.crt文件上传到你的服务器的指定目录下
+```
+
+接下来我们需要修改nginx的配置文件。参考[前文](#2)所述方法打开nginx的配置文件。先将你之前插入的内容删除或者使用`#`注释掉，然后在最后一个大括号前插入以下内容：
+
+```nginx
+server {
+         listen       443 ssl;
+         server_name  example.com; #你证书绑定的域名;
+
+        ssl_certificate      /usr/local/nginx/cert/你的域名.crt;
+        ssl_certificate_key  /usr/local/nginx/cert/你的域名.key;
+
+        ssl_session_cache    shared:SSL:1m;
+        ssl_session_timeout  5m;
+
+        ssl_ciphers  HIGH:!aNULL:!MD5;
+        ssl_prefer_server_ciphers  on;
+        
+        location / {
+            index index.htm index.html; #指定默认文件。
+	    			root html; #指定网站根目录。
+        }
+}
+server { #将你的80端口重定向至433端口，即强制使用https访问
+  			listen 80;
+  			server_name; example.com; #你的域名
+				rewrite ^/(.*)$ https://example.com:443/$1 permanent;
+}
+```
+
+将文件保存以后重启nginx服务。
+
+重启以后你可能会遇到这样的问题：`**unknown directive “ssl” in /usr/local/nginx/conf/nginx.conf:121**`，这是因为你在安装nginx时，没有编译SSL模块。你可以在终端里按照下述步骤解决[^ 3]：
+
+```shell
+cd ../nginx-1.16.1 #进入到nginx的源码包的目录下
+./configure --with-http_ssl_module #带参数执行程序
+make #编译
+cp /usr/local/nginx/sbin/nginx /usr/local/nginx/sbin/nginx_bak #备份旧的nginx
+cp ./objs/nginx /usr/local/nginx/sbin/ #然后将新的nginx的程序复制一份
+cd /usr/local/nginx/sbin/ #切换到sbin目录
+./nginx -s reload #重启nginx服务
+```
+
+如果重启成功的话，打开浏览器访问你的域名，这时候应该可以在链接旁边看到一个小锁了！
 
 [^1]:https://support.huaweicloud.com/usermanual-vpc/zh-cn_topic_0073379079.html
 
 [^2]: https://support.huaweicloud.com/icprb-icp/zh-cn_topic_0115815923.html
+[^ 3]: https://blog.csdn.net/qq_26369317/article/details/102863613
+

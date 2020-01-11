@@ -83,3 +83,60 @@ excerpt: 记录本人在学习Python时遇到的坑以及这门语言的特性�
 - Python中继承的写法：`class 子类名(基类名)`
 - 在编程中一般使用子类去替代基类
 - 在子类中，通过重新定义父类中的方法，可以让同一种方法在不同的子类中有不同的行为，这称为重写
+
+### 20/1/11
+
+- Python中提供两个重要的功能：异常处理和断言（Assertions）来处理运行中出现的异常和错误，他们的功能是用于调试Python程序
+- 异常：无法正常处理程序时会发生异常，是一个对象，如果不捕获异常，程序会终止执行
+- Python中异常处理的写法：
+
+```python
+try: 
+	#operation1
+except exception_type, argument:
+	#if error occurs in operation1, execute operation2
+  #operation2
+else: 
+	#if no error occurs in operation1, execute operation3
+  #operation3
+```
+
+- 使用`except`可以不带异常类型，但是会让`try-except`语句捕获所有的异常，不建议这样写
+- 可以使用`expect(exception1[, expection2[, expection3]])`来添加多个异常类型
+- `argument`为异常的参数，可以用于输出异常信息的异常值
+- 也可以使用如下方法，但是与`try-except`有所不同：
+
+```python
+try:
+	#operation1
+finally:
+	#in error occurs in operation1, directly execute operation2, otherwise, execute operation2 after operation1 finished
+```
+
+- `finally`和`except`不可以同时使用
+
+- 可以使用`raise`触发异常
+- `append()`方法用于在列表末尾添加新的对象，对于一个数组`list`，可以这样使用：`list.append()`
+- 多线程用于同时执行多个不同的程序，可以把占据长时间的程序中的任务放到后台处理
+- 线程与进程：独立的线程有自己的程序入口、执行序列、程序出口，但是线程不可以独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制
+- 在Python中使用线程：`thread.start_new_thread(function, args[, kwargs])`，其中`function`为线程函数，这个函数需要提前定义好，`args`为传递给线程函数的参数，是一个元组，`kwargs`为可选参数，此种方式称为函数式，线程的结束一般靠函数的自然结束
+- 此外还可以使用Python所提供的`threading`模块，直接从`threading.Thread`继承：`class myThread(threading.Thread)`，然后重写`__init__`和`run`方法，把需要执行的代码写到`run`方法里面，`__init__`的重写方法如下：
+
+```python
+def __init__(self, threadID, name, counter):
+	threading.Thread.__init__(self)
+	self.threadID = threadID
+	self.name = name
+	self.counter = counter
+```
+
+- 上述`thread`类提供了以下方法：
+  - `run()`：表示线程活动的方法
+  - `start`：启动线程
+  - `join()`：等待直到线程终止
+  - `isAlive()`：查询线程是否活动
+  - `getName()`：返回线程名
+  - `setName()`：设置线程名
+- 为了避免两个或多个线程同时运行，产生冲突，可以使用线程锁来控制线程执行的优先顺序，被锁定的线程优先执行，其他进程必须停止
+- 可以使用`threading.Lock().acquire()`和`threading.Lock().release()`来锁定和释放线程
+- 可以建立一个空数组用于存放线程，再通过`append`方法将线程添加至该数组中，通过遍历数组可以对其中的线程做一样的操作

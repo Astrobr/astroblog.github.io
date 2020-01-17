@@ -37,7 +37,7 @@ Because in the real world, we make decisions in a sequence in a period. Therefor
 
 - **Agent**: the subject of RL, it is agent that interact with the world.
 - **Model**: the world, the environment, the *agent* stays in the *model*.
-- **Reward**: $\{r_t\}$, the feedback signal from the *model*, *agent* recieves the *reward*. The *reward* can have different values according to the different **states** of the *agent*.
+- **Reward**: $ \{r_t\} $, the feedback signal from the *model*, *agent* recieves the *reward*. The *reward* can have different values according to the different **states** of the *agent*.
 - **State**: $\{s_t\}$, the *state* of the *agent*. The *state* can be either finite or infinite, and it is set by people.
 - **Action**: $\{a_t\}$, the movement of the *agent* in the *model*, *actions* are different under different *states*.
 - **Observation**: $\{o_t\}$, the *agent* need to observe its *state* and determine the *reward*.

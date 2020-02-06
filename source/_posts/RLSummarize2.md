@@ -315,3 +315,4 @@ $V^*=V$, for all $s\in S$
 $\pi^*=\tt argmax\mit _{a\in A}R(s,a)+\gamma\sum_{s'\in S}P(s'|s,a)V^*(s')$, $\forall s\in S$. 
 
 The idea is to run fixed point iterations to find the fixed point $V^*$ of $B^*$.
+

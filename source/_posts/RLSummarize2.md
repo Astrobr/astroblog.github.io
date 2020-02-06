@@ -29,7 +29,7 @@ We need to make two assumptions before we define the Markov process. The first a
 
 Base on these two assumption, we can define a *transition transform matrix*:
 
-$$\bf P=\begin{bmatrix}P(s_1|s_1)&\cdots&P(s_n|s_1)\\\vdots&&\vdots\\P(s_1|s_n)&\cdots&P(s_n|s_n)\end{bmatrix}$$.
+![](https://astrobear.top/resource/astroblog/content/RLS2F0.png)
 
 The size of $\bf P$ is $|S|\times |S|$ and the sum of each row of $\bf P$ equals 1.
 
@@ -87,7 +87,7 @@ We design the discount factor for many reasons. The best reason among them I thi
 
 Figure 2 and 3 shows an example of how to calculate the return.
 
-![Figure 2](https://pic3.zhimg.com/80/v2-52c5d21082994b4cc1d4aac0fe4f58ba_hd.png)
+![Figure 2](https://astrobear.top/resource/astroblog/content/RLS2F2.png)
 
 ![Figure 3](https://pic2.zhimg.com/v2-91921a745909435f7b984d1dae5ef271_r.jpg)
 
@@ -105,13 +105,13 @@ We have three ways to compute the value function.
 
   Then, make a little transformation, see Figure 4 in detail. 
 
-  ![Figure 4](https://pic3.zhimg.com/80/v2-fda247960872e2cb7653bcb89729626a_hd.png)
+  ![Figure 4](https://astrobear.top/resource/astroblog/content/RLS2F4.png)
 
   Then, we have
 
   $V(s)=R(s)+\gamma \sum P(s'|s)V(s')$, 
 
-  in matrix form as 
+  
 
   $V=R+\gamma\bf P\mit V$. 
 
@@ -246,11 +246,11 @@ Which means finding the arguments ($V(s),\pi(s)$) that produce the biggest value
 
 If an optimal policy exists then its value function must be a fixed point of the operator $B^*$. 
 
-####Bellman optimality backup operator
+#### Bellman optimality backup operator
 
 Bellman optimality backup operator is written as $B^*$ with a value function behind it 
 
-$B^*V(s)=\tt max \mit _aR(s,a)+\gamma\sum_{s'\in S}P(s'|s,a)V(s')$. 
+$B^*V(s)=\tt max_a \mit R(s,a)+\gamma\sum_{s'\in S}P(s'|s,a)V(s')$. 
 
 If $\gamma<1$, $B^*$ is a strict contraction and has a unique fixed point. This means 
 

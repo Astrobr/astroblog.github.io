@@ -234,7 +234,7 @@ Optimality value function determines the best performance of a MDP. When we know
 
 ### Find the best policy
 
-The best policy is defined precisely as *optimal policy*  $\pi^*$, which means for every policy $\pi$, for all time steps, and for all states $s\in S$, there is $V_t^{\pi^*}(s)\geq V_t^\pi(s)$.
+The best policy is defined precisely as *optimal policy*  $\pi^*$ , which means for every policy $\pi$, for all time steps, and for all states  $s\in S$ , there is  $V_t^{\pi^*}(s)\geq V_t^\pi(s)$.
 
 For an infinite horizon MDP, existence of an optimal policy also implies the existence of a stationary optimal policy. Although there is an infinite horizon, we still just need to search finite policies, which equals $|A|^{|S|}$. Moreover, the optimal policy might not be unique.
 
@@ -312,7 +312,7 @@ $V'(s)=0, V(s)=\infty$, for all $s\in S$
 
 $V^*=V$, for all $s\in S$ 
 
-$\pi^*=\tt argmax\mit _{a\in A}R(s,a)+\gamma\sum_{s'\in S}P(s'|s,a)V^*(s')$, $\forall s\in S$. 
+$\pi^*=\tt argmax_{a\in A}\mit R(s,a)+\gamma\sum_{s'\in S}P(s'|s,a)V^*(s')$, $\forall s\in S$. 
 
-The idea is to run fixed point iterations to find the fixed point $V^*$ of $B^*$.
+The idea is to run fixed point iterations to find the fixed point $V^*$  of  $B^*$.
 

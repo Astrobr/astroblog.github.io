@@ -35,7 +35,7 @@ If you find any mistake in my articles, please feel free to tell me in comments.
 
 ### What is reinforcement learning (RL)?
 
-RL is a kind of machine learning method that mainly focuses on the interaction between the **agent ** (subject) and the **model** (environment, world). Through this interaction, the agent can gain experience and then have a better performance in some specific aspects. For example, a robot player can get a high score in a game after being trained by using RL method, or we can make the autopilot of the car to control it keep its lane and drive to the destination smoothly without any collision.
+RL is a kind of machine learning method that mainly focuses on the interaction between the agent (subject) and the model (environment, world). Through this interaction, the agent can gain experience and then have a better performance in some specific aspects. For example, a robot player can get a high score in a game after being trained by using RL method, or we can make the autopilot of the car to control it keep its lane and drive to the destination smoothly without any collision.
 
 A RL agent may interact with the world, and then recieve some feedback signal for each interaction. By jduging whether the feedback signal is good (beneficial to the agent's desire performance) or not, the agent can then change its way interacting with the world (make better decisions) in order to reach the best performance. By accumulating these experiences, the agent can become more and more "smarter" and has a better performance.
 

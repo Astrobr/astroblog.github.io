@@ -23,13 +23,13 @@ module.exports = function (hexo) {
         }
         const widgets = hexo.extend.helper.get('get_config').bind(this)('widgets');
         if (this.page.layout !== 'post') {
-                    return widgets.filter(widget => widget.hasOwnProperty('position') && widget.position === position);
-                }
+                return widgets.filter(widget => widget.hasOwnProperty('position') && widget.position === position);
+            }
         if (this.page.title === '欢迎来到Astroblog！') {
-                    return widgets.filter(widget => widget.hasOwnProperty('position') && widget.position === position);
+                return widgets.filter(widget => widget.hasOwnProperty('position') && widget.position === position);
             }
         if (position === 'left') {
-                    return widgets.filter(widget => widget.hasOwnProperty('position') && (widget.type === 'toc' || widget.type === 'profile'));
+                return widgets.filter(widget => widget.hasOwnProperty('position') && (widget.type === 'toc' || widget.type === 'profile'));
             } else {
                 return []
             }

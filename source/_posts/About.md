@@ -17,6 +17,8 @@ thumbnail: https://astrobear.top/resource/astroblog/thumbnail/t2.jpg
 #If you need to customize your excerpt, delete the well number below and input something. You can also input <!-- more --> in your article to divide the excerpt and other contents.
 excerpt: Astroblog是Astrobear的基地！这里有知识，方法，还有更多！
 
+toc: false
+
 #You can begin to input your article below now.
 
 ---

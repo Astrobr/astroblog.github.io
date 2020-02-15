@@ -1054,18 +1054,25 @@ var IcarusThemeSettings = {
 document.addEventListener('DOMContentLoaded', function () {
     MathJax.Hub.Config({
         'HTML-CSS': {
-            matchFontHeight: false
+            matchFontHeight: false,
+            linebreaks: { automatic: true },
         },
         SVG: {
-            matchFontHeight: false
+            matchFontHeight: false,
+            linebreaks: { automatic: true },
         },
         CommonHTML: {
-            matchFontHeight: false
+            matchFontHeight: false,
+            linebreaks: { automatic: true },
         },
         tex2jax: {
             inlineMath: [
                 ['$','$'],
                 ['\\(','\\)']
+            ],
+            displayMath: [ 
+                ['$$','$$'], 
+                ["\\[","\\]"] 
             ]
         }
     });

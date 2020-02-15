@@ -223,7 +223,7 @@
             <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2020-01-18T13:06:00.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2020-01-18</time>
                 
-                <time class="level-item has-text-grey is-hidden-mobile" datetime="2020-02-06T16:11:35.224Z"><i class="far fa-calendar-check">&nbsp;</i>2020-02-07</time>
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2020-02-15T10:40:23.595Z"><i class="far fa-calendar-check">&nbsp;</i>2020-02-15</time>
                 
                 
                 <div class="level-item">
@@ -1225,18 +1225,25 @@ var IcarusThemeSettings = {
 document.addEventListener('DOMContentLoaded', function () {
     MathJax.Hub.Config({
         'HTML-CSS': {
-            matchFontHeight: false
+            matchFontHeight: false,
+            linebreaks: { automatic: true },
         },
         SVG: {
-            matchFontHeight: false
+            matchFontHeight: false,
+            linebreaks: { automatic: true },
         },
         CommonHTML: {
-            matchFontHeight: false
+            matchFontHeight: false,
+            linebreaks: { automatic: true },
         },
         tex2jax: {
             inlineMath: [
                 ['$','$'],
                 ['\\(','\\)']
+            ],
+            displayMath: [ 
+                ['$$','$$'], 
+                ["\\[","\\]"] 
             ]
         }
     });

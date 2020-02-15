@@ -427,6 +427,7 @@ img.thumbnail {
 .content :not(pre) > code {
   font-size: 0.85em;
   color: #ff3860;
+  word-break: break-all;
 }
 .content blockquote footer strong + cite {
   margin-left: 0.5em;

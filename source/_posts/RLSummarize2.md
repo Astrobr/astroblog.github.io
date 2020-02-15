@@ -262,7 +262,7 @@ Next I'll briefly introduce some algorithms to compute the optimal value functio
 
 #### Policy search
 
-This algorithm is very simple but acquires a great number of computing resources. What it do is just trying all the possible policies and find out the biggest value function, return a $V^*(s)$  and  $\pi^*(s)$. 
+This algorithm is very simple but acquires a great number of computing resources. What it do is just trying all the possible policies and find out the biggest value function, return a value function and a policy. 
 
 #### Policy iteration
 

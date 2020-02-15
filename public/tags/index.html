@@ -17,23 +17,23 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://astrobear.top/images/og_image.png">
 <meta property="article:author" content="Astrobear">
-<meta property="article:tag" content="AirSim">
-<meta property="article:tag" content="Research">
-<meta property="article:tag" content="Python">
+<meta property="article:tag" content="macOS">
+<meta property="article:tag" content="Hackintosh">
 <meta property="article:tag" content="Astrobear">
 <meta property="article:tag" content="Life">
 <meta property="article:tag" content="Others">
-<meta property="article:tag" content="RL">
 <meta property="article:tag" content="Photos">
 <meta property="article:tag" content="Astrophotography">
+<meta property="article:tag" content="AirSim">
+<meta property="article:tag" content="Research">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="RL">
+<meta property="article:tag" content="HP">
 <meta property="article:tag" content="Programming Language">
 <meta property="article:tag" content="Nginx">
 <meta property="article:tag" content="Internet server">
 <meta property="article:tag" content="Network Technology">
 <meta property="article:tag" content="Experience">
-<meta property="article:tag" content="macOS">
-<meta property="article:tag" content="Hackintosh">
-<meta property="article:tag" content="HP">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://astrobear.top/images/og_image.png">
 
@@ -962,18 +962,25 @@ var IcarusThemeSettings = {
 document.addEventListener('DOMContentLoaded', function () {
     MathJax.Hub.Config({
         'HTML-CSS': {
-            matchFontHeight: false
+            matchFontHeight: false,
+            linebreaks: { automatic: true },
         },
         SVG: {
-            matchFontHeight: false
+            matchFontHeight: false,
+            linebreaks: { automatic: true },
         },
         CommonHTML: {
-            matchFontHeight: false
+            matchFontHeight: false,
+            linebreaks: { automatic: true },
         },
         tex2jax: {
             inlineMath: [
                 ['$','$'],
                 ['\\(','\\)']
+            ],
+            displayMath: [ 
+                ['$$','$$'], 
+                ["\\[","\\]"] 
             ]
         }
     });

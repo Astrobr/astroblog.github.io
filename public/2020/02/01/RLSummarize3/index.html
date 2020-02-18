@@ -19,7 +19,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://astrobear.top/resource/astroblog/content/RLS3F1.jpeg">
 <meta property="article:published_time" content="2020-02-01T09:12:00.000Z">
-<meta property="article:modified_time" content="2020-02-06T14:57:47.072Z">
+<meta property="article:modified_time" content="2020-02-17T10:40:36.579Z">
 <meta property="article:author" content="Astrobear">
 <meta property="article:tag" content="Research">
 <meta property="article:tag" content="Python">
@@ -146,7 +146,7 @@
             <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2020-02-01T09:12:00.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2020-02-01</time>
                 
-                <time class="level-item has-text-grey is-hidden-mobile" datetime="2020-02-06T14:57:47.072Z"><i class="far fa-calendar-check">&nbsp;</i>2020-02-06</time>
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2020-02-17T10:40:36.579Z"><i class="far fa-calendar-check">&nbsp;</i>2020-02-17</time>
                 
                 
                 <div class="level-item">
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    10 minutes read (About 1441 words)
+                    10 minutes read (About 1439 words)
                 </span>
                 
                 
@@ -194,7 +194,7 @@
 </ul>
 <p>Figure 1 shows a backup diagram for the Monte Carlo policy evaluation algorithm. And you can find that, unlike what we have talked about in the second article, Monte Carlo on policy evaluation is not a bootstraping process.</p>
 <p><img src="https://astrobear.top/resource/astroblog/content/RLS3F1.jpeg" alt="Figure 1"></p>
-<h4 id="How-to-evaluate-the-good-and-bad-of-an-algorithm"><a href="#How-to-evaluate-the-good-and-bad-of-an-algorithm" class="headerlink" title="How to evaluate the good and bad of an algorithm"></a>How to evaluate the good and bad of an algorithm</h4><p>We use three quntities to evaluate the good and bad of an algorithm.</p>
+<h4 id="How-to-Evaluate-the-Good-and-Bad-of-an-Algorithm"><a href="#How-to-Evaluate-the-Good-and-Bad-of-an-Algorithm" class="headerlink" title="How to Evaluate the Good and Bad of an Algorithm?"></a>How to Evaluate the Good and Bad of an Algorithm?</h4><p>We use three quntities to evaluate the good and bad of an algorithm.</p>
 <p>Consider a statistical model that is parameterized by $\theta$ and that determins a probability distribution over oberserved data $P(x|\theta)$. Then consider a statistic $\hat\theta$ that provides an estimate of $\theta$ and it’s a function of observed data $x$. Then we have these quantities of the estimator: </p>
 <p>Bias: $Bias_\theta(\hat\theta)=\Bbb E\rm_{x|\theta}[\hat\theta]-\theta$, </p>
 <p>Variance: $Var(\hat\theta)=\Bbb E\rm_{x|\theta}[(\hat\theta-\Bbb E\rm[\hat\theta])^2]$, </p>
@@ -205,7 +205,7 @@
 <p><em>$G(s)$: Increment total return</em></p>
 <p><em>$V(s)$: Estimate</em></p>
 <p><code>while</code> each state $s$ visited in episode $i$ <code>do</code></p>
-<p>​     <code>while</code> <strong>first time $t$</strong> that the state $s$ is visited in episode $h_i$ <code>do</code></p>
+<p>​     <code>while</code> <strong>first time $t$</strong> that the state $s$ is visited in episode $i$ <code>do</code></p>
 <p>​        $N(s)=N(s)+1$</p>
 <p>​        $G(s)=G(s)+G_{i,t}$</p>
 <p>​        $V(s)=G(s)/N(s)$ </p>
@@ -216,12 +216,12 @@
 <p><em>$N(s)$: Increment counter of total first visits</em></p>
 <p><em>$G(s)$: Increment total return</em></p>
 <p><em>$V(s)$: Estimate</em></p>
-<p><code>while</code> each state $s$ visited in episode $h_i$ <code>do</code></p>
+<p><code>while</code> each state $s$ visited in episode $i$ <code>do</code></p>
 <p>​     <code>while</code> <strong>every time $t$</strong> that the state $s$ is visited in episode $i$ <code>do</code></p>
 <p>​        $N(s)=N(s)+1$</p>
 <p>​        $G(s)=G(s)+G_{i,t}$</p>
 <p>​        $V(s)=G(s)/N(s)$ </p>
-<p><code>return</code> $V(s)$</p>
+<p><code>return</code> $V(s)$.</p>
 <p>Every-Visit Monte Carlo is a bised estimator becaue the varibles are not IID (Independently Identicaly Distribution). But it has a lower variance which is better than First-Visit Monte Carlo. </p>
 <h4 id="Increment-First-Visit-Every-Visit-Monte-Carlo"><a href="#Increment-First-Visit-Every-Visit-Monte-Carlo" class="headerlink" title="Increment First-Visit/Every-Visit Monte Carlo"></a>Increment First-Visit/Every-Visit Monte Carlo</h4><p>We can replace $V(s)=G(s)/N(s)$ in both two algorithms by </p>
 <p>$V(s)=V(s)+{1\over N(s)}(G(s)-V(s))$. </p>
@@ -320,7 +320,7 @@
 </ul>
 <p>Figure 1 shows a backup diagram for the Monte Carlo policy evaluation algorithm. And you can find that, unlike what we have talked about in the second article, Monte Carlo on policy evaluation is not a bootstraping process.</p>
 <p><img src="https://astrobear.top/resource/astroblog/content/RLS3F1.jpeg" alt="Figure 1"></p>
-<h4 id="How-to-evaluate-the-good-and-bad-of-an-algorithm"><a href="#How-to-evaluate-the-good-and-bad-of-an-algorithm" class="headerlink" title="How to evaluate the good and bad of an algorithm"></a>How to evaluate the good and bad of an algorithm</h4><p>We use three quntities to evaluate the good and bad of an algorithm.</p>
+<h4 id="How-to-Evaluate-the-Good-and-Bad-of-an-Algorithm"><a href="#How-to-Evaluate-the-Good-and-Bad-of-an-Algorithm" class="headerlink" title="How to Evaluate the Good and Bad of an Algorithm?"></a>How to Evaluate the Good and Bad of an Algorithm?</h4><p>We use three quntities to evaluate the good and bad of an algorithm.</p>
 <p>Consider a statistical model that is parameterized by $\theta$ and that determins a probability distribution over oberserved data $P(x|\theta)$. Then consider a statistic $\hat\theta$ that provides an estimate of $\theta$ and it’s a function of observed data $x$. Then we have these quantities of the estimator: </p>
 <p>Bias: $Bias_\theta(\hat\theta)=\Bbb E\rm_{x|\theta}[\hat\theta]-\theta$, </p>
 <p>Variance: $Var(\hat\theta)=\Bbb E\rm_{x|\theta}[(\hat\theta-\Bbb E\rm[\hat\theta])^2]$, </p>
@@ -331,7 +331,7 @@
 <p><em>$G(s)$: Increment total return</em></p>
 <p><em>$V(s)$: Estimate</em></p>
 <p><code>while</code> each state $s$ visited in episode $i$ <code>do</code></p>
-<p>​     <code>while</code> <strong>first time $t$</strong> that the state $s$ is visited in episode $h_i$ <code>do</code></p>
+<p>​     <code>while</code> <strong>first time $t$</strong> that the state $s$ is visited in episode $i$ <code>do</code></p>
 <p>​        $N(s)=N(s)+1$</p>
 <p>​        $G(s)=G(s)+G_{i,t}$</p>
 <p>​        $V(s)=G(s)/N(s)$ </p>
@@ -342,12 +342,12 @@
 <p><em>$N(s)$: Increment counter of total first visits</em></p>
 <p><em>$G(s)$: Increment total return</em></p>
 <p><em>$V(s)$: Estimate</em></p>
-<p><code>while</code> each state $s$ visited in episode $h_i$ <code>do</code></p>
+<p><code>while</code> each state $s$ visited in episode $i$ <code>do</code></p>
 <p>​     <code>while</code> <strong>every time $t$</strong> that the state $s$ is visited in episode $i$ <code>do</code></p>
 <p>​        $N(s)=N(s)+1$</p>
 <p>​        $G(s)=G(s)+G_{i,t}$</p>
 <p>​        $V(s)=G(s)/N(s)$ </p>
-<p><code>return</code> $V(s)$</p>
+<p><code>return</code> $V(s)$.</p>
 <p>Every-Visit Monte Carlo is a bised estimator becaue the varibles are not IID (Independently Identicaly Distribution). But it has a lower variance which is better than First-Visit Monte Carlo. </p>
 <h4 id="Increment-First-Visit-Every-Visit-Monte-Carlo"><a href="#Increment-First-Visit-Every-Visit-Monte-Carlo" class="headerlink" title="Increment First-Visit/Every-Visit Monte Carlo"></a>Increment First-Visit/Every-Visit Monte Carlo</h4><p>We can replace $V(s)=G(s)/N(s)$ in both two algorithms by </p>
 <p>$V(s)=V(s)+{1\over N(s)}(G(s)-V(s))$. </p>
@@ -582,7 +582,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                            9
+                            10
                     </p>
                 </a>
             </div>
@@ -660,9 +660,9 @@
         <span class="has-mr-6">2</span>
         <span>Monte Carlo on policy evaluation</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#How-to-evaluate-the-good-and-bad-of-an-algorithm">
+        <a class="is-flex" href="#How-to-Evaluate-the-Good-and-Bad-of-an-Algorithm">
         <span class="has-mr-6">2.1</span>
-        <span>How to evaluate the good and bad of an algorithm</span>
+        <span>How to Evaluate the Good and Bad of an Algorithm?</span>
         </a></li><li>
         <a class="is-flex" href="#First-Visit-Monte-Carlo">
         <span class="has-mr-6">2.2</span>

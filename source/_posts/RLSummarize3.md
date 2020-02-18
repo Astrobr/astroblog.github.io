@@ -55,7 +55,7 @@ Figure 1 shows a backup diagram for the Monte Carlo policy evaluation algorithm.
 
 ![Figure 1](https://astrobear.top/resource/astroblog/content/RLS3F1.jpeg)
 
-#### How to evaluate the good and bad of an algorithm
+#### How to Evaluate the Good and Bad of an Algorithm?
 
 We use three quntities to evaluate the good and bad of an algorithm.
 
@@ -81,13 +81,13 @@ Initialize $N(s)=0,\ G(s)=0,\ V(s)=0,\ \forall s\in S$
 
 `while` each state $s$ visited in episode $i$ `do`
 
-​	 `while` **first time $t$** that the state $s$ is visited in episode $h_i$ `do`
+​     `while` **first time $t$** that the state $s$ is visited in episode $i$ `do`
 
-​		$N(s)=N(s)+1$
+​        $N(s)=N(s)+1$
 
-​		$G(s)=G(s)+G_{i,t}$
+​        $G(s)=G(s)+G_{i,t}$
 
-​		$V(s)=G(s)/N(s)$ 
+​        $V(s)=G(s)/N(s)$ 
 
 `return` $V(s)$
 
@@ -105,17 +105,17 @@ Initialize $N(s)=0,\ G(s)=0,\ V(s)=0,\ \forall s\in S$
 
 *$V(s)$: Estimate*
 
-`while` each state $s$ visited in episode $h_i$ `do`
+`while` each state $s$ visited in episode $i$ `do`
 
-​	 `while` **every time $t$** that the state $s$ is visited in episode $i$ `do`
+​     `while` **every time $t$** that the state $s$ is visited in episode $i$ `do`
 
-​		$N(s)=N(s)+1$
+​        $N(s)=N(s)+1$
 
-​		$G(s)=G(s)+G_{i,t}$
+​        $G(s)=G(s)+G_{i,t}$
 
-​		$V(s)=G(s)/N(s)$ 
+​        $V(s)=G(s)/N(s)$ 
 
-`return` $V(s)$
+`return` $V(s)$.
 
 Every-Visit Monte Carlo is a bised estimator becaue the varibles are not IID (Independently Identicaly Distribution). But it has a lower variance which is better than First-Visit Monte Carlo. 
 
@@ -155,9 +155,9 @@ Initialize $V^\pi(s)=0,\ s\in S$
 
 `while` True `do`
 
-​	Sample tuple $(s_t,a_t,r_t,s_{t+1})$ 
+​    Sample tuple $(s_t,a_t,r_t,s_{t+1})$ 
 
-​	$V^\pi(s_t)=V^\pi(s_t)+\alpha(r_t+\gamma V^\pi(s_{t+1})-V^\pi(s_t))$ 
+​    $V^\pi(s_t)=V^\pi(s_t)+\alpha(r_t+\gamma V^\pi(s_{t+1})-V^\pi(s_t))$ 
 
 It is improtance to aware that $V^\pi(s_{t+1})$ is the current value (estimate) of the next state $s_{t+1}$ and you can get the exact state at the following next time step. Only at that time can you know what the exact $s_{t+1}$ is and then use the current (you can also regard it as the previous one because it remains the same value at $s_t$) estimate $V^\pi(s_{t+1})$ to calculate the value of $s_t$. Thus that's why it is called the combination of Monte Carlo and dynamic programming due to the sampling (to approximate the expectation) and bootstraping process.
 

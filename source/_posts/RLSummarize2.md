@@ -163,7 +163,7 @@ Before we mention the state value function, we need to talk about the policy for
 
 A policy specifies what action to take in each state, which is actually a probability distribution over actions given the current state. The policy may be *varying with time*, especially when the horizon is finite. A policy can be written as
 
-$\bf \pi\mit(a|s)=P(a_t=a|s_t=s)$. 
+$\pi(a|s)=P(a_t=a|s_t=s)$. 
 
 If given a MDP and a $\pi$, the process of reward satisfies the following two relationships: 
 

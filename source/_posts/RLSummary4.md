@@ -1,5 +1,5 @@
 ---
-title: Summarize of Reinforcement Learning 4
+title: Summary of Reinforcement Learning 4
 date: 2020-2-16 16:38:00
 categories: 
 	- [CS]

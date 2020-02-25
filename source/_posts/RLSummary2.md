@@ -1,5 +1,5 @@
 ---
-title: Summarize of Reinforcement Learning 2
+title: Summary of Reinforcement Learning 2
 date: 2020-1-18 21:06:00
 categories: 
 	- [CS]

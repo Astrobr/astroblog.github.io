@@ -1,5 +1,5 @@
 ---
-title: Summarize of Reinforcement Learning 3
+title: Summary of Reinforcement Learning 3
 date: 2020-2-1 17:12:00
 categories: 
 	- [CS]
@@ -33,7 +33,7 @@ $h_j=(s_{j,1},a_{j,1},r_{j,1},s_{j,2},a_{j,2},r_{j,2},...,s_{j,L_j})$,
 
 where $L_j$ is the length of the interaction (interaction between agent and environment). 
 
-In the article *Summarize of Reinforcement Learning 2* I introduced the *iterative solution* of value function, which is
+In the article *Summary of Reinforcement Learning 2* I introduced the *iterative solution* of value function, which is
 
 $V_t(s)=\Bbb E_\pi[R_{t+1}+\gamma V_\pi (s_{t+1})|s_t=s]$
 

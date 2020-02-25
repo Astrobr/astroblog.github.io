@@ -1,5 +1,5 @@
 ---
-title: Summarize of Reinforcement Learning 5
+title: Summary of Reinforcement Learning 5
 date: 2020-2-19 19:39:00
 categories: 
 	- [CS]
@@ -55,7 +55,7 @@ $\vec x(s)=[x_1(s)\ x_2(s)\ ...\ x_n(s)]$.
 
 We than approximate our value functions using a linear combination of features: 
 
-$\hat v(s,\vec w)=\vec x(s)^T\vec w=\sum_{j=1}^nx_j(s)w_j$. 
+$\hat v(s,\vec w)=\vec x(s)\vec w=\sum_{j=1}^nx_j(s)w_j$. 
 
 Our goal is to find the $\vec w$ that minimizes the loss between a true value function $v_\pi(s)$ and its approximation $\hat v(s,\vec w)$. So now we define the objective function (also known as the loss function) to be: 
 
@@ -99,7 +99,7 @@ The two algorithm we introduced above can both converge to the weights $\vec w$ 
 
 #### Control Using VFA
 
-Similar to VFAs, we can also use function approximators for action-values and we let $q_\pi(s,a)\approx\hat q(s,a,\vec w)$. In this part we will use VFA to approximate policy evaluation and than perform $\epsilon$-greedy policy improvement. However, this process can be unstable because it involes the intersection of function approximation, bootstrapping, and off-policy learning. These three things are called as *the dadely triad*, which may make the result fail to converge or converge to something bad. Now I will quickly pass this part using the basic concept we have mentioned before. 
+Similar to VFAs, we can also use function approximator for action-values and we let $q_\pi(s,a)\approx\hat q(s,a,\vec w)$. In this part we will use VFA to approximate policy evaluation and than perform $\epsilon$-greedy policy improvement. However, this process can be unstable because it involes the intersection of function approximation, bootstrapping, and off-policy learning. These three things are called as *the dadely triad*, which may make the result fail to converge or converge to something bad. Now I will quickly pass this part using the basic concept we have mentioned before. 
 
 First we define our objective function $J(\vec w)$ as: 
 
@@ -137,11 +137,11 @@ $\Delta\vec w=\alpha(G-\hat q_\pi(s,a,\vec w))\vec x(s,a)$.
 
 For SARSA we have: 
 
-$\Delta\vec w=\alpha[r+\gamma \hat q^\pi(s',a,\vec w)-\hat q(s,a,\vec w)]\vec x(s)$. 
+$\Delta\vec w=\alpha[r+\gamma \hat q^\pi(s',a,\vec w)-\hat q(s,a,\vec w)]\vec x(s,a)$. 
 
 And for Q-learning: 
 
-$\Delta\vec w=\alpha[r+\gamma\tt max_{a'}\mit\hat q^\pi(s',a,\vec w)-\hat q(s,a,\vec w)]\vec x(s)$. 
+$\Delta\vec w=\alpha[r+\gamma\tt max_{a'}\mit\hat q^\pi(s',a,\vec w)-\hat q(s,a,\vec w)]\vec x(s,a)$. 
 
 Notice that because of the value function approximations, which can be expansions, converge is not guaranteed. The table below gives the summary of convergence of control methods with VFA and `(Yes)` means the result chatters around near-optimal value function.
 

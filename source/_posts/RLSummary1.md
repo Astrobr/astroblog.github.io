@@ -27,7 +27,7 @@ This blog is the first one of my series of blogs that summary the key points of 
 
 These series of blogs of mine are mostly based on the following works and I'm really grateful to the contributors: 
 
-- Online courses of [Stanford University CS234: Reinforcement Learning, Emma Brunskill](https://www.youtube.com/watch?v=FgzM3zpZ55o&list=PLoROMvodv4rOSOPzutgyCTapiGlY2Nd8u) and the [notes](https://drive.google.com/drive/folders/1tDME7YQWuipE7WVi0QHFoLhMOvAQdWIn).
+- Online courses of [Stanford University CS234: Reinforcement Learning, Emma Brunskill](https://www.youtube.com/watch?v=FgzM3zpZ55o&list=PLoROMvodv4rOSOPzutgyCTapiGlY2Nd8u) and [lecture notes](https://drive.google.com/drive/folders/1tDME7YQWuipE7WVi0QHFoLhMOvAQdWIn).
 - [Blogs of 从流域到海域](https://blog.csdn.net/solo95/category_9298323.html).
 - [Blogs of 叶强](https://zhuanlan.zhihu.com/reinforce).
 

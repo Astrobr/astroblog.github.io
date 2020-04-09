@@ -19,7 +19,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://pic4.zhimg.com/v2-e7dd00d7fda722d5f8f70a9928e95a17_r.jpg">
 <meta property="article:published_time" content="2020-02-23T02:17:00.000Z">
-<meta property="article:modified_time" content="2020-02-25T15:01:32.799Z">
+<meta property="article:modified_time" content="2020-04-09T01:23:18.319Z">
 <meta property="article:author" content="Astrobear">
 <meta property="article:tag" content="Research">
 <meta property="article:tag" content="Python">
@@ -146,7 +146,7 @@
             <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2020-02-23T02:17:00.000Z"><i class="far fa-calendar-alt">&nbsp;</i>2020-02-23</time>
                 
-                <time class="level-item has-text-grey is-hidden-mobile" datetime="2020-02-25T15:01:32.799Z"><i class="far fa-calendar-check">&nbsp;</i>2020-02-25</time>
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2020-04-09T01:23:18.319Z"><i class="far fa-calendar-check">&nbsp;</i>2020-04-09</time>
                 
                 
                 <div class="level-item">
@@ -238,7 +238,7 @@
 <p>To perform experience replay, we need to repeat the following: </p>
 <ul>
 <li>$(s,a,r,s’)$~$D$: sample an experience tuple form the dataset</li>
-<li>Compute the target value for the sampled $s$: $y^{DQN}<em>t=r_t+\gamma\tt max</em>{a’}\mit \hat q(s_{t+1},a’,\vec w^-)$ </li>
+<li>Compute the target value for the sampled $s$: $y_t^{DQN}=r_t+\gamma\tt max_{a’}\mit \hat q(s_{t+1},a’,\vec w^-)$ </li>
 <li>Use SGD to update the network weights: $\Delta\vec w=\alpha[r+\gamma\tt max_{a’}\mit\hat q^\pi(s’,a,\vec w^-)-\hat q(s,a,\vec w)]\vec x(s,a)$ </li>
 </ul>
 <h4 id="Target-Network"><a href="#Target-Network" class="headerlink" title="Target Network"></a>Target Network</h4><p>To further improve the stability of learning and deal with non-stationary learning targets, a separate target network is used for generating the targets $y_j$ in the Q-learning update. More specifically, after every $C$ steps the target network $\hat q(s,a,\vec w^-)$ is updated by copying the parameters’ values $(\vec w^-=\vec w)$ from the online network $\hat q(s,a,\vec w)$, and the target network remains unchanged and generates targets $y_j$ for the following $C$ updates. </p>
@@ -336,7 +336,7 @@
 <p>To perform experience replay, we need to repeat the following: </p>
 <ul>
 <li>$(s,a,r,s’)$~$D$: sample an experience tuple form the dataset</li>
-<li>Compute the target value for the sampled $s$: $y^{DQN}<em>t=r_t+\gamma\tt max</em>{a’}\mit \hat q(s_{t+1},a’,\vec w^-)$ </li>
+<li>Compute the target value for the sampled $s$: $y_t^{DQN}=r_t+\gamma\tt max_{a’}\mit \hat q(s_{t+1},a’,\vec w^-)$ </li>
 <li>Use SGD to update the network weights: $\Delta\vec w=\alpha[r+\gamma\tt max_{a’}\mit\hat q^\pi(s’,a,\vec w^-)-\hat q(s,a,\vec w)]\vec x(s,a)$ </li>
 </ul>
 <h4 id="Target-Network"><a href="#Target-Network" class="headerlink" title="Target Network"></a>Target Network</h4><p>To further improve the stability of learning and deal with non-stationary learning targets, a separate target network is used for generating the targets $y_j$ in the Q-learning update. More specifically, after every $C$ steps the target network $\hat q(s,a,\vec w^-)$ is updated by copying the parameters’ values $(\vec w^-=\vec w)$ from the online network $\hat q(s,a,\vec w)$, and the target network remains unchanged and generates targets $y_j$ for the following $C$ updates. </p>

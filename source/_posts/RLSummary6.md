@@ -162,7 +162,7 @@ The agent's experiences (or transitions) at each time step $e_t=(s_t,a_t,r_t,s_{
 To perform experience replay, we need to repeat the following: 
 
 - $(s,a,r,s')$~$D$: sample an experience tuple form the dataset
-- Compute the target value for the sampled $s$: $y^{DQN}_t=r_t+\gamma\tt max_{a'}\mit \hat q(s_{t+1},a',\vec w^-)$ 
+- Compute the target value for the sampled $s$: $y_t^{DQN}=r_t+\gamma\tt max_{a'}\mit \hat q(s_{t+1},a',\vec w^-)$ 
 - Use SGD to update the network weights: $\Delta\vec w=\alpha[r+\gamma\tt max_{a'}\mit\hat q^\pi(s',a,\vec w^-)-\hat q(s,a,\vec w)]\vec x(s,a)$ 
 
 #### Target Network
